@@ -27,9 +27,9 @@ signupForm.addEventListener('submit', e => {
     const password = signupForm['password'].value;
     // console.log(name, email, password);
     signupForm.reset();
-    auth.createUserWithEmailAndPassword(email, password).then((cred) => {
-        // console.log(cred);
-        return db.collection('users').doc(cred.user.uid).set({
+    auth.createUserWithEmailAndPassword(email, password).then((red) => {
+       
+        return db.collection('users').doc(red.user.uid).set({
             Name: name,
             Email: email,
             Password: password
